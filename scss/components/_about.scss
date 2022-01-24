@@ -1,0 +1,187 @@
+.info{
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  padding: 5px 20px 20px;
+  line-height: 1.2;
+  width: 75px;
+  height: 75px;
+  box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+  -webkit-box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+  -moz-box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+  z-index: 3;
+  overflow-y: scroll;
+  border-radius: 6px;
+}
+
+.me{
+    @extend .outwindow;
+
+}
+
+.portfolio{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @extend .outwindow;
+  h3{
+    color: $fontsecol;
+  }
+}
+
+.card{
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: center;
+  font-size: 1.3vw;
+  width: 100%;
+  min-width: 300px;
+  max-width: 380px;
+  &:hover{
+    cursor: pointer;
+  }
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    flex-direction: row;
+  }
+  .info-card{
+    width: inherit;
+    height: 0px;
+    @media (min-width: $lgbreak), (min-height: $lgbreak) {
+      height: 100%;
+      width: 0px;
+    }
+  }
+  img{
+    width: 100%;
+    min-width: 300px;
+    max-width: 380px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 1px randomColor($colors);
+    -webkit-box-shadow: 0px 0px 0px 1px randomColor($colors);
+    -moz-box-shadow: 0px 0px 0px 1px randomColor($colors);
+  }
+  h3{
+    margin: 0px;
+  }
+  .git{
+    text-decoration: none;
+
+  }
+  .gpage{
+    text-decoration: none;
+    margin-top: 0px;
+  }
+  #rev-card{
+    align-self: flex-start;
+    flex-direction: column;
+    border: 1px solid randomColor($colors);
+    border-radius: 0px 0px 8px 8px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+    -webkit-box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+    -moz-box-shadow: 0px 0px 10px 1px randomColor($colors) inset;
+    @media (min-width: $mdbreak) {
+      padding: 20px;
+    }
+  }
+}
+
+.skills{
+  @extend .outwindow;
+  text-align: center;
+  margin: 0px auto auto;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: absolute;
+
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    left: 25%;
+  }
+  h2 {
+    color: randomColor($colors);
+    margin-top: 6px;
+    flex: 4 100%;
+  }
+  .champ{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 6px;
+    min-width: 200px;
+    height: fit-content;
+  }
+  .tech{
+    color: $coltech;
+    border: 2px solid $coltech;
+    h3{
+      margin: 0px;
+      padding: 8px 0;
+      background-color: lighten($coltech, 35%);
+    }
+    .item{
+      padding: 8px 0;
+      background-color: lighten($coltech, 55%);
+      font-weight: 500;
+    }
+  }
+  .hard{
+    color: $colhard;
+    border: 2px solid $colhard;
+    h3{
+      margin: 0px;
+      padding: 8px 0;
+      background-color: lighten($colhard, 35%);
+    }
+    .item{
+      padding: 8px 0;
+      background-color: lighten($colhard, 55%);
+      font-weight: 500;
+    }
+  }
+  .soft{
+    color: $colsoft;
+    border: 2px solid $colsoft;
+    h3{
+      margin: 0px;
+      padding: 8px 0;
+      background-color: lighten($colsoft, 30%);
+    }
+    .item{
+      padding: 8px 0;
+      background-color: lighten($colsoft, 45%);
+      font-weight: 500;
+    }
+  }
+}
+
+.contact{
+  margin: 0px auto auto;
+  text-align: center;
+  width: 90%;
+  position: absolute;
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    left: 5%;
+  }
+  h2{
+    color: randomColor($colors);
+  }
+  .offer{
+    padding: 20px;
+    background-color: randomColor($colors);
+    color: white;
+    font-weight: 500;
+    border: 2px solid randomColor($colors);
+    transform: translateX(-600%);
+    animation: moveHead 1s 5s cubic-bezier(.07,.64,.77,1.37) forwards;
+    border-radius: 10px;
+  }
+  a{
+    text-decoration: none;
+  }
+}

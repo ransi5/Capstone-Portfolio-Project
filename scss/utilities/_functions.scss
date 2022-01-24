@@ -1,0 +1,22 @@
+// Function for calculating flex item width and flex basis-----------//
+
+@function flexbasis($numb, $gutt:null) {
+  @if $gutt == 0px {
+    @return 100% / $numb;
+  } @else {
+    $gutpct: (($gutt / $mqbreak) *100%) * 2;
+    $guttot: $gutpct * $numb;
+    @return(100% - $guttot) / $numb;
+  }
+}
+
+
+@function randomColor($col) {
+  $color: nth($col, random(length($col)));
+  @return $color;
+}
+
+@function randomImage($img) {
+  $image: nth($img, random(length($img)));
+  @return $image;
+}

@@ -1,0 +1,50 @@
+//radial-gradient animation----------------------------//
+
+@mixin radialGradient {
+  $color1: randomColor($colors);
+  $color2: randomColor($colors);
+  @for $i from 0 through 100 {
+    $x: $i + 0%;
+    $y: 20% + $i;
+    @if ($y > 100%) {$y: 100%}
+    #{$i}% {
+      background-image: radial-gradient(#{$color1} #{$x}, #{$color2} #{$y});
+      background-color: $color2;
+    }
+  }
+}
+
+@mixin hoverBorder{
+  border-top: 4px solid randomColor($colors);
+  border-right: 4px solid randomColor($colors);
+  border-bottom: 4px solid randomColor($colors);
+  border-left: 4px solid #C9E0FF;
+}
+
+@mixin infoGradient {
+  $color1: randomColor($colors);
+  $color2: transparent;
+  @for $i from 0 through 100 {
+    $x: $i + 0%;
+    $y: 20% + $i;
+    @if ($y > 100%) {$y: 100%}
+    #{$i}% {
+      background-image: linear-gradient(#{$color2} #{$x - 2}, #{$color1} #{$x}, #{$color2} #{$x + 2});
+      background-color: $color2;
+    }
+  }
+}
+
+@mixin sminfoGradient {
+  $color1: randomColor($colors);
+  $color2: rgb(0, 0, 0, .6);
+  @for $i from 0 through 100 {
+    $x: $i + 0%;
+    $y: 20% + $i;
+    @if ($y > 100%) {$y: 100%}
+    #{$i}% {
+      background-image: linear-gradient(#{$color2} #{$x - 2}, #{$color1} #{$x}, #{$color2} #{$x + 2});
+      background-color: $color2;
+    }
+  }
+}

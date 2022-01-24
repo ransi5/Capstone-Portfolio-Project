@@ -1,0 +1,210 @@
+@keyframes fader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes cardWidth{
+  from {
+    min-width: 0%;
+  }
+  to {
+    min-width: calc(100% - 380px);
+  }
+}
+
+@keyframes moveHead{
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes backmove{
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes revelation{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backmove{
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dropMe {
+  0% {
+    transform: translate(-100%, 100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes drop {
+  0%{
+    transform: translateY(-100%,);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fly {
+  0%{
+    transform: translateY(0%,);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(5);
+  }
+  50% {
+    transform: scale(.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes radialme {
+  @include radialGradient;
+}
+
+@keyframes radialport {
+  @include radialGradient;
+}
+
+@keyframes radialskills {
+  @include radialGradient;
+}
+
+@keyframes radialcontact {
+  @include radialGradient;
+}
+
+@keyframes arcnetX{
+  from {
+    transform: rotateY(0deg)
+  }
+  to {
+    transform: rotateY(360deg)
+  }
+}
+
+@keyframes arcnetY{
+  from {
+    transform: rotateY(180deg)
+  }
+  to {
+    transform: rotateY(90deg)
+  }
+}
+
+@keyframes expand {
+  to {
+    width: 95%;
+    height: 90%;
+    left: 2.5%;
+    right: 2.5%
+  }
+}
+
+@keyframes shrink {
+  to {
+    width:62px;
+    height: 62px;
+  }
+}
+
+@keyframes rotateinfo {
+  from{
+    transform: rotateX(45deg)
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes bringinfo{
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes takeout {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes infoGradient{
+  @include infoGradient;
+}
+
+@keyframes setHaiti{
+  from {
+    height: 0%;
+  }
+  to {
+    height: fit-content;
+  }
+}
+
+@keyframes sminfoGradient{
+  @include sminfoGradient;
+}

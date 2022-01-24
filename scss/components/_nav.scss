@@ -1,0 +1,128 @@
+#nav{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto auto;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: nav;
+  min-width: 90%;
+  max-width: 350px;
+  z-index: 1;
+}
+
+
+#me{
+  flex: 2 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  transform: translateY(-300%,);
+  animation: dropMe 1s 1.8s cubic-bezier(.68,-0.04,.35,1.72) forwards,
+    scaleDown 1s 1.8s cubic-bezier(.68,-0.04,.35,1.72);
+  .outer{
+    &:hover{
+      cursor: pointer;
+      @include hoverBorder;
+      animation: spin 1.5s linear infinite;
+    }
+  }
+  .inner{
+    animation: radialme 40s linear infinite alternate;
+  }
+}
+
+#portfolio{
+  flex: 2 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  // z-index: 1;
+  transform: translateY(-300%,);
+  animation: dropMe 1s 2.2s cubic-bezier(.68,-0.04,.35,1.72) forwards,
+    scaleUp 1s 2.2s cubic-bezier(.68,-0.04,.35,1.72);
+  .outer{
+    &:hover{
+      cursor: pointer;
+      @include hoverBorder;
+      animation: spin 1.5s linear infinite;
+    }
+  }
+  .inner{
+    animation: radialport 40s linear infinite alternate;
+  }
+}
+
+#skills{
+  flex: 2 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  // z-index: 1;
+  transform: translateY(-500%,);
+  animation: dropMe 1s 2.8s cubic-bezier(.68,-0.04,.35,1.72) forwards,
+    scaleUp 1s 2.8s cubic-bezier(.68,-0.04,.35,1.72);
+  .outer{
+    &:hover{
+      cursor: pointer;
+      @include hoverBorder;
+      animation: spin 1.5s linear infinite;
+    }
+  }
+  .inner{
+    animation: radialskills 40s linear infinite alternate;
+  }
+}
+
+#contact{
+  flex: 2 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  // z-index: 1;
+  transform: translateY(-500%,);
+  animation: dropMe 1s 3.4s cubic-bezier(.68,-0.04,.35,1.72) forwards,
+    scaleDown 1s 3.4s cubic-bezier(.68,-0.04,.35,1.72);
+  .outer{
+    &:hover{
+      cursor: pointer;
+      @include hoverBorder;
+      animation: spin 1.5s linear infinite;
+    }
+  }
+  .inner{
+    animation: radialcontact 40s linear infinite alternate;
+  }
+}
+
+.outer{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: white;
+  // z-index: 1;
+  // display: flex;
+  align-items: center;
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.inner{
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    width: 196px;
+    height: 196px;
+  }
+  h3{
+    color: white;
+    -webkit-text-stroke: .5px black;
+    text-shadow: 1px 0px black;
+    text-align: center;
+  }
+}

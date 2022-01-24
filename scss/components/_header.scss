@@ -1,0 +1,26 @@
+header{
+  overflow: hidden;
+  background-color: $colorprimary;
+  width: 100%;
+  position: relative;
+  padding: 10px 20px;
+  z-index: 1;
+  color: white;
+  border-radius: 0 0 50% 0;
+  box-shadow: 0px 3px 0px 0px lighten($colorprimary, 10%);
+  -webkit-box-shadow: 0px 3px 0px 0px lighten($colorprimary, 10%);
+  -moz-box-shadow: 0px 3px 0px 0px lighten($colorprimary, 10%);
+  transform: translateX(-100%);
+  animation: moveHead .4s .5s cubic-bezier(.07,.64,.77,1.37) forwards;
+  h1{
+    font-weight: 700;
+    font-size: 1.3em;
+    margin: 0px;
+    -webkit-text-stroke: .5px black;
+    text-shadow: 1px 0px black;
+    letter-spacing: 3px;
+  }
+  @media (min-width: $mdbreak) {
+    padding: 15px 50px;
+  }
+}

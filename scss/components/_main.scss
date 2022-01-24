@@ -1,0 +1,38 @@
+main{
+  display: grid;
+  width: 100%;
+  min-height: 100%;
+  perspective: 400px;
+  grid-template-columns: 1fr .6fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  'arc arc'
+  'nav nav';
+  position: absolute;
+  top: 25px;
+  padding-bottom: 40px;
+  &:after{
+    background-image: linear-gradient($colprimrgrad, $colprimrgradpr), randomImage($imagessm);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    perspective: 400px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    opacity: 0;
+    animation: revelation 1s 1s forwards, backmove 120s infinite;
+    @media (min-width: $smbreak) {
+      background-image: linear-gradient($colprimrgrad, $colprimrgradpr), randomImage($imageslg);
+      animation: revelation 1s 1s forwards, backmove 100s infinite;
+    }
+  }
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    grid-template-areas:
+    'nav arc'
+    'nav arc';
+    padding-bottom: 0px;
+  }
+}

@@ -1,0 +1,44 @@
+#arcnet{
+  grid-area: arc;
+  z-index: 3;
+  align-items: center;
+  margin: 40px auto 0px;
+  transform: rotateX(4deg);
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    margin: auto;
+    top: 32%;
+  }
+}
+
+.outer-arc{
+  display: flex;
+  width: 62px;
+  height: 62px;
+  border: 3px solid randomColor($colors);
+  border-radius: 50%;
+  transform-origin: center;
+  animation: arcnetX 2s linear infinite;
+  z-index: 5;
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.inner-arc{
+  display: flex;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border: 3px solid randomColor($colors);
+  border-radius: 50%;
+  justify-content: center;
+  color: randomColor($colors);
+  transform-origin: center;
+  animation: arcnetY 3s linear infinite;
+  z-index: 5;
+  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+    width: 238px;
+    height: 238px;
+  }
+}
