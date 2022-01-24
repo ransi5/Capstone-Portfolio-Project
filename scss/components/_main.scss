@@ -23,10 +23,10 @@ main{
     left: 0px;
     content: '';
     opacity: 0;
-    animation: revelation 1s 1s forwards, backmove 120s infinite;
+    animation: revelation 1s 1.6s forwards, backmove 120s infinite;
     @media (min-width: $smbreak) {
       background-image: linear-gradient($colprimrgrad, $colprimrgradpr), randomImage($imageslg);
-      animation: revelation 1s 1s forwards, backmove 100s infinite;
+      animation: revelation 1s 1.6s forwards, backmove 100s infinite;
     }
   }
   @media (min-width: $lgbreak), (min-height: $lgbreak) {

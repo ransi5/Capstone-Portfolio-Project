@@ -65,12 +65,11 @@ function magicDisplay(elem, event) {
   let mqroheit = navi.offsetHeight/2;
   let mqroleft = navi.offsetWidth + (navi.offsetWidth - outer.offsetLeft) + (arcnet.offsetLeft - navStar.offsetWidth - navStar.offsetLeft);
   let mqrtheit = navi.offsetHeight/2;
-  let mqrtleft = (navi.offsetWidth - outer.offsetLeft) + (arcnet.offsetLeft - navStar.offsetWidth - navStar.offsetLeft);
+  let mqrtleft = (navStar.offsetWidth - outer.offsetLeft) + (arcnet.offsetLeft - navStar.offsetWidth - navStar.offsetLeft);
   let bordRadius = 50;
-
+  console.log(outer.offsetLeft, navStar.offsetWidth, outer.offsetLeft)
   movetoArcnet(id, outer, navi, arcnet, roheit, rtheit, mqroleft, mqrtleft, mqroheit, mqrtheit);
   if (window.innerWidth < 992 && window.innerHeight < 992) {
-    console.log('hey')
     setTimeout(()=>{
       setBorderradius(bordRadius, outers, inners, elemarr)
     }, 800);
@@ -136,14 +135,15 @@ function movetoArcnet(id, outer, navi, arcnet, roheit, rtheit, mqroleft, mqrtlef
   let outerWit = outer.offsetWidth;
   let naviWidth = navi.offsetWidth;
   let lLeft = naviWidth - outerLeft - (outer.offsetWidth / 2);
-  let rLeft = outer.offsetLeft + (outer.offsetWidth / 2);
+  let rLeft = (navStar.offsetWidth / 2) - outerLeft - (outer.offsetWidth / 2);
   var finheit, finleft;
 
   if (window.innerWidth < 992 && window.innerHeight < 992) {
     if (id == 'me' || id =='skills') { finleft = lLeft; }
-      if (id == 'portfolio' || id =='contact') {finleft = `-${rLeft}`;}
+      if (id == 'portfolio' || id =='contact') {finleft = `${rLeft}`;}
       if (id == 'me' || id =='portfolio') { finheit = roheit; }
       if (id == 'skills' || id =='contact') {finheit = rtheit;}
+      console.log(rLeft, outer.offsetLeft, outer.offsetWidth, finheit);
       let style = document.createElement('style');
       style.type = 'text/css'
       let keyframe = `@keyframes totheArc {
@@ -448,37 +448,40 @@ function flyArcnet(primId, xId, arcNet) {
   let xLeft = xId.offsetLeft;
   let xTop = xId.offsetTop;
   let arcTop = arcNet.offsetTop;
-  let totLef =  primLefty - xLeft + arcNet.offsetLeft;
-  let totTop = primTop - xTop;
+  let arcLeft = arcNet.offsetLeft;
+  let totLef =  primLefty + (arcLeft - xLeft);
+  let totTop = primTop + (xTop - arcTop);
   let targL = 0;
   var loafy;
   xId.style.zIndex = '1';
   arcNet.style.position = 'absolute';
-  console.log(primTop, xTop, arcNet.offsetTop, totTop)
-  if ( window.innerWidth < 992 && window.innerHeight < 992) {
-    if ( totLef > 0) {
+
+  if ( window.innerWidth < 992 && window.innerHeight < 992 && window.innerWidth < window.innerHeight) {
+    console.log('ki')
+    if ( primLefty > xLeft) {
       loafy = setInterval(()=>{
-        targL++;
-        arcNet.style.left = `${targL}px`;
-        if (targL == totLef) {clearInterval(loafy)}
+        arcLeft++;
+        arcNet.style.left = `${arcLeft}px`;
+        if (arcLeft == totLef) {clearInterval(loafy)}
       },5)
-    } else if ( totLef < 0 ) {
+    } else if ( primLefty < xLeft ) {
         loafy = setInterval(()=>{
-        targL--;
-        arcNet.style.left = `${targL}px`;
-        if (targL == totLef) {clearInterval(loafy)}
+        arcLeft--;
+        arcNet.style.left = `${arcLeft}px`;
+        if (arcLeft == totLef) {clearInterval(loafy)}
       },5)
     } else { return null; }
   }
 
-  if (window.innerWidth >= 992 || window.innerHeight >= 992) {
-    if ( totTop > 0) {
+  if (window.innerWidth >= 992 || window.innerHeight >= 992 || window.innerWidth > window.innerHeight) {
+    console.log('hi')
+    if ( primTop > xTop) {
       var toafy = setInterval(()=>{
         arcTop++;
         arcNet.style.top = `${arcTop}px`;
         if (arcTop == totTop) {clearInterval(toafy)}
       },5)
-    } else if ( totTop < 0 ) {
+    } else if ( primTop < xTop ) {
         toafy = setInterval(()=>{
         arcTop--;
         arcNet.style.top = `${arcTop}px`;
@@ -515,7 +518,7 @@ function nestnXmove(primId, xId, arcNet) {
       primId.appendChild(archie);
       archie.style.width = "120px";
       archie.style.height = '120px';
-      archie.style.top = '0px';
+      archie.style.top = `${primId.offsetTop}px`;
     }, 1000)
   }
   pOtter.classList.add('fade');
