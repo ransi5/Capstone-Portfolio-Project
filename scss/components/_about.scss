@@ -15,8 +15,251 @@
 }
 
 .me{
-    @extend .outwindow;
+  @extend .outwindow;
+  h3{
+    font-weight: 400;
+  }
+  .back-wrapper{
+    background-image: linear-gradient(rgb(0, 0, 0, .9), rgb(0, 0, 0, .7)), url('../images/background-small.jpg');
+    background-size: cover;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: white;
+    position: relative;
+    margin-top: 20px;
+    @media (min-width: $mdbreak) {
+      background-image: linear-gradient(rgb(0, 0, 0, .9), rgb(0, 0, 0, .7)), url('../images/background.jpg');
+    }
+    &:before{
+      content: '';
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      background: inherit;
+      z-index: 1;
+      top: 0px;
+      transform-origin: left top;
+      transform: skewY(-3deg);
+      background-image: linear-gradient(white, white);
+      @media (min-width: $mdbreak) {
+        height: 75px
+      }
+    }
+    .background{
+      padding: 30px 5px 70px;
+      max-width: 500px;
+      width: 100%;
+      @media (min-width: $lgbreak), (min-height: $lgbreak) {
+        padding: 30px 0px 70px;
+        margin: 0px 10% 0px auto;
+        font-size: 1.6em;
+      }
+    }
+  }
+  .goal-wrapper{
+    background-color: $fontsecol;
+    color: white;
+    position: relative;
+    font-size: 1.2em;
+    font-weight: 300;
+    &:before{
+      content: '';
+      width: 100%;
+      height: 75px;
+      position: absolute;
+      background: inherit;
+      z-index: 1;
+      top: 0px;
+      transform-origin: center right;
+      transform: skewY(3deg);
+    }
+    &:after{
+      content: '';
+      width: 100%;
+      height: 75px;
+      position: absolute;
+      background: inherit;
+      z-index: 1;
+      bottom: 0px;
+      transform-origin: center right;
+      transform: skewY(-3deg);
+    }
+  }
+  .goal{
+    max-width: 400px;
+    padding: 40px 5px 55px;
+    @media (min-width: $lgbreak), (min-height: $lgbreak) {
+      padding: 1px 0px 1px;
+      margin: 0px auto 0px 10%;
+      font-size: 1.6em;
+    }
+  }
+}
 
+.resume-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 75px;
+  margin-top: 50px;
+  padding: 10px;
+  border: 1px solid randomColor($colors);
+  border-radius: 50%/100% 100% 0px 0px;
+  background-color: $colorback;
+  font-weight: 300;
+  @media (min-width: $mdbreak) {
+    margin-top: 100px;
+  }
+  h3{
+    flex: 1 100%;
+    min-width: 100%;
+    margin: 0px 0px -15px;
+    text-align: center;
+  }
+  .view{
+    flex: 1 50%;
+    max-width: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  .download{
+    flex: 1 50%;
+    max-width: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+}
+.resume{
+  width: 100%;
+  height: fit-content;
+  .res-wrapper{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0px auto;
+  }
+  .heady{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: #a7cdfe;
+    padding-bottom: 10px;
+  }
+  h2{
+    margin-bottom: 10px;
+  }
+  .cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @extend .res-wrapper;
+    @media (min-width: $mdbreak), (min-height: $mdbreak) {
+      flex-direction: row;
+    }
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .sm-ic{
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 15px;
+  }
+  hr{
+    margin: 0px;
+  }
+  .skil{
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    h2{
+      flex: 12 100%;
+      min-width: 100%;
+    }
+    .item{
+      padding: 8px;
+      border-right: 1px solid white;
+      background-color: #a7cdfe;
+      font-weight: 500;
+    }
+  }
+  .projects{
+    margin: 10px auto;
+    .links{
+      display: flex;
+      flex-direction: column;
+      @media (min-width: $mdbreak){
+      flex-direction: row;
+      justify-content: space-between;
+      }
+    }
+  }
+  h3{
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  ul{
+    padding-inline-start: 15px;
+    margin-top: 5px;
+  }
+  .experience{
+    margin: 10px auto;
+  }
+  .work{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    h3{
+      @media (min-width: $mdbreak), (min-height: $mdbreak) {
+        flex: 1 33%;
+        max-width: 33%;
+      }
+    }
+    .duration{
+      display: flex;
+      justify-content: flex-end;
+      margin: 5px 0px;
+      flex: 1 50%;
+      @media (min-width: $mdbreak), (min-height: $mdbreak) {
+        flex: 1 33%;
+        max-width: 33%;
+      }
+    }
+    .role{
+      margin: 5px 0px;
+      flex: 1 50%;
+      @media (min-width: $mdbreak), (min-height: $mdbreak) {
+        flex: 1 33%;
+        max-width: 33%;
+      }
+    }
+  }
+  .education{
+    margin: 10px auto;
+  }
+  .course{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (min-width: $mdbreak), (min-height: $mdbreak) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .goli{
+      min-width: 100%;
+    }
+  }
+  p{
+    margin: 5px 0px;
+  }
 }
 
 .portfolio{
@@ -24,6 +267,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
   @extend .outwindow;
+  h2{
+    flex: 3 100%;
+    text-align: center;
+  }
   h3{
     color: $fontsecol;
   }
@@ -34,7 +281,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // justify-content: center;
   font-size: 1.3vw;
   width: 100%;
   min-width: 300px;
@@ -161,6 +407,7 @@
 }
 
 .contact{
+  @extend .outwindow;
   margin: 0px auto auto;
   text-align: center;
   width: 90%;

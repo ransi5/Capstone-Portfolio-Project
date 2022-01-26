@@ -19,8 +19,16 @@
 }
 
 .outwindow{
-  transform: translateY(-450%);
+  transform: translateY(-600%);
   z-index: 4;
+}
+
+.bold{
+  font-weight: 600;
+}
+
+.highlight{
+  color: $fontsecol;
 }
 
 .animedrop{

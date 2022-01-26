@@ -7,6 +7,8 @@ const navStar = document.getElementById('nav');
 const main = document.querySelector('main');
 let arcnet = document.getElementById('arcnet');
 var tab = document.getElementById('info-tab');
+const resume = document.querySelector('.me .resume');
+const vew = document.querySelector('.me .view');
 
 window.addEventListener("resize", ()=>{
   let widthi = window.innerWidth;
@@ -835,6 +837,30 @@ function cardDisplay(id, event) {
   }
 }
 
+function viewResume() {
+  console.log(vew, resume);
+  if (vew.textContent == 'View') {
+    resume.classList.replace('hide', 'megshow');
+    vew.textContent = '';
+    vew.textContent = 'Close';
+    vew.removeAttribute('onclick');
+    vew.setAttribute('onclick', 'closeResume()');
+  }
+}
+
+function closeResume() {
+  if (vew.textContent == 'Close') {
+    resume.classList.replace('megshow', 'hide');
+    vew.textContent = '';
+    vew.textContent = 'View';
+    vew.removeAttribute('onclick');
+    vew.setAttribute('onclick', 'viewResume()');
+  }
+}
+
+function printResume() {
+  window.open('resume.html');
+}
 
 function setPropthree(pArcNet, navStar, main){
   taby = document.getElementById('info-tab');
