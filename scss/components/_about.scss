@@ -107,6 +107,9 @@
   border-radius: 50%/100% 100% 0px 0px;
   background-color: $colorback;
   font-weight: 300;
+  box-shadow: 0px 0px 10px 1px randomColor($colors);
+  -webkit-box-shadow: 0px 0px 10px 1px randomColor($colors);
+  -moz-box-shadow: 0px 0px 10px 1px randomColor($colors);
   @media (min-width: $mdbreak) {
     margin-top: 100px;
   }
@@ -156,8 +159,9 @@
     flex-direction: column;
     justify-content: space-around;
     @extend .res-wrapper;
-    @media (min-width: $mdbreak), (min-height: $mdbreak) {
+    @media (min-width: $mdbreak), (min-height: $lgbreak) {
       flex-direction: row;
+      flex-wrap: wrap;
     }
   }
   a{
@@ -217,8 +221,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     h3{
-      @media (min-width: $mdbreak), (min-height: $mdbreak) {
+      flex: 1 100%;
+      min-width: 100%;
+      @media (min-width: $mdbreak), (min-height: $lgbreak) {
         flex: 1 33%;
+        min-width: 30%;
         max-width: 33%;
       }
     }
@@ -262,6 +269,85 @@
   }
 }
 
+.socials{
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto 0px;
+  position: relative;
+  box-shadow: 0px 0px 10px 1px randomColor($colors);
+  -webkit-box-shadow: 0px 0px 10px 1px randomColor($colors);
+  -moz-box-shadow: 0px 0px 10px 1px randomColor($colors);
+  .starr{
+    width: 100%;
+    height: 100%;
+
+    &::before{
+      content: "";
+      height: 0;
+      width: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 50px solid randomColor($colors);
+      border-top: 50px solid transparent;
+      position: absolute;
+      top: -50%;
+      left: 0px;
+    }
+    &::after{
+      content: "";
+      height: 0;
+      width: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-top: 50px solid randomColor($colors);
+      position: absolute;
+      top: 100%;
+      left: 0px;
+    }
+  }
+  .starry{
+    width: 100%;
+    height: 100%;
+
+    &::before{
+      content: "";
+      height: 0;
+      width: 0;
+      border-left: 50px solid randomColor($colors);
+      border-right: 50px transparent;
+      border-bottom: 100px solid transparent;
+      border-top: 100px solid transparent;
+      position: absolute;
+      left: 100%;
+    }
+    &::after{
+      content: "";
+      height: 0;
+      width: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid randomColor($colors);
+      border-bottom: 100px solid transparent;
+      border-top: 100px solid transparent;
+      position: absolute;
+      left: -50%;
+      top: 0px;
+    }
+  }
+  .linked{
+    position: absolute;
+    top: 12.5%;
+  }
+  img{
+    width: 100%;
+  }
+}
+
 .portfolio{
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +374,7 @@
   &:hover{
     cursor: pointer;
   }
-  @media (min-width: $lgbreak), (min-height: $lgbreak) {
+  @media (min-width: $lgbreak), (min-height: $lgbreak){
     flex-direction: row;
   }
   .info-card{
@@ -344,9 +430,9 @@
   justify-content: space-around;
   flex-wrap: wrap;
   position: absolute;
-
+  height: max-content;
   @media (min-width: $lgbreak), (min-height: $lgbreak) {
-    left: 25%;
+    left: 20%;
   }
   h2 {
     color: randomColor($colors);
@@ -408,27 +494,65 @@
 
 .contact{
   @extend .outwindow;
-  margin: 0px auto auto;
-  text-align: center;
-  width: 90%;
   position: absolute;
-  @media (min-width: $lgbreak), (min-height: $lgbreak) {
-    left: 5%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  font-weight: 300;
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  background-image: linear-gradient(rgb(0, 0, 0, .9), rgb(0, 0, 0, .7)), url('../images/earth.jpg');
+  background-position: center;
+  background-size: cover;
+  @media (orientation: landscape) {
+    height: max-content;
   }
-  h2{
-    color: randomColor($colors);
+  .contact-box{
+    margin: 20% auto;
+    width: 100%;
+    height: fit-content;
+    max-width: 450px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  h2 {
+    margin: 0px;
+    padding: 5px;
+    font-weight: 200;
+  }
+  p{
+    margin: 8px 0px;
+  }
+  .vert-line{
+    width: 1px;
+    height: 40px;
+    margin: 4px auto;
+    background-color: white;
   }
   .offer{
-    padding: 20px;
-    background-color: randomColor($colors);
+    padding: 10px;
+    background-color: transparent;
     color: white;
-    font-weight: 500;
-    border: 2px solid randomColor($colors);
-    transform: translateX(-600%);
-    animation: moveHead 1s 5s cubic-bezier(.07,.64,.77,1.37) forwards;
-    border-radius: 10px;
+    font-weight: 200;
+    border-top: 1px solid white;
+    text-align: left;
+  }
+  .tipe{
+    font-size: .7em;
+    position: relative;
+    span{
+      display: inline-block;
+    }
+  }
+  .cursur{
+    background-color: white;
+    animation: fader .5s linear alternate infinite;
+    position: absolute;
   }
   a{
     text-decoration: none;
+    color: white;
   }
 }

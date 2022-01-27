@@ -8,7 +8,6 @@
   min-width: 90%;
   max-width: 350px;
   transform:  translateY(-600%) scale(2);
-  // transform: scale(1.5);
   animation: dropMe 3s 2.6s cubic-bezier(.68,-0.04,.35,1.22) forwards;
   z-index: 1;
 }
@@ -19,9 +18,6 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  // transform: translateY(-300%,);
-  // animation: dropMe 1s 1.8s cubic-bezier(.68,-0.04,.35,1.72) forwards,
-  //   scaleDown 1s 1.8s cubic-bezier(.68,-0.04,.35,1.72);
   .outer{
     &:hover{
       cursor: pointer;
@@ -39,10 +35,6 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  // z-index: 1;
-  // transform: translateY(-300%,);
-  // animation: dropMe 1s 2.2s cubic-bezier(.68,-0.04,.35,1.72) forwards,
-  //   scaleUp 1s 2.2s cubic-bezier(.68,-0.04,.35,1.72);
   .outer{
     &:hover{
       cursor: pointer;
@@ -60,10 +52,6 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  // z-index: 1;
-  // transform: translateY(-500%,);
-  // animation: dropMe 1s 2.8s cubic-bezier(.68,-0.04,.35,1.72) forwards,
-  //   scaleUp 1s 2.8s cubic-bezier(.68,-0.04,.35,1.72);
   .outer{
     &:hover{
       cursor: pointer;
@@ -81,10 +69,6 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  // z-index: 1;
-  // transform: translateY(-500%,);
-  // animation: dropMe 1s 3.4s cubic-bezier(.68,-0.04,.35,1.72) forwards,
-  //   scaleDown 1s 3.4s cubic-bezier(.68,-0.04,.35,1.72);
   .outer{
     &:hover{
       cursor: pointer;
@@ -102,8 +86,6 @@
   height: 130px;
   border-radius: 50%;
   background-color: white;
-  // z-index: 1;
-  // display: flex;
   align-items: center;
   @media (min-width: $lgbreak), (min-height: $lgbreak) {
     width: 200px;
@@ -127,5 +109,10 @@
     -webkit-text-stroke: .5px black;
     text-shadow: 1px 0px black;
     text-align: center;
+    font-size: 1.3em;
+    font-weight: 500;
+    @media (min-width: $lgbreak), (min-height: $lgbreak) {
+      font-size: 1.5em;
+    }
   }
 }

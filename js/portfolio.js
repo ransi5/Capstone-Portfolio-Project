@@ -9,6 +9,76 @@ let arcnet = document.getElementById('arcnet');
 var tab = document.getElementById('info-tab');
 const resume = document.querySelector('.me .resume');
 const vew = document.querySelector('.me .view');
+const offer = document.querySelector('.offer-box .offer');
+const offerP = document.querySelector('.offer p');
+
+
+fid.addEventListener('click', ()=>{
+  if (!offerP.classList.contains('hide')){
+    var text1 = 'Hold on!!!'
+    var text2 = 'You have a message from a Galaxy far far FAR away!!!'
+    var text3 = 'If you are an employer, schedule an interview to get a free box of chocolates.';
+    var tArr1 = text1.split('');
+    var tArr2 = text2.split('');
+    var tArr3 = text3.split('');
+
+    var p = document.createElement('code');
+    p.className = 'tipe'
+    offer.appendChild(p)
+    var cursur = document.createElement('span');
+    cursur.className = 'cursur';
+    cursur.textContent = 'A';
+    p.appendChild(cursur);
+
+    createTipeText(tArr1, p);
+    createTipeText(tArr2, p);
+    createTipeText(tArr3, p);
+
+    offerP.className = 'hide';
+    setTimeout(()=>{
+      var tipe = document.querySelectorAll('.tipe .invisible');
+      var curseer = document.querySelector('.tipe .cursur');
+      tipeText(curseer, tipe, tArr1);
+    },8000)
+    setTimeout(()=>{
+      var tipe = document.querySelectorAll('.tipe .invisible');
+      var curseer = document.querySelector('.tipe .cursur');
+      tipeText(curseer, tipe, tArr2);
+    },10000)
+    setTimeout(()=>{
+      var tipe = document.querySelectorAll('.tipe .invisible');
+      var curseer = document.querySelector('.tipe .cursur');
+      tipeText(curseer, tipe, tArr3);
+    },16000)
+  }
+});
+
+function createTipeText(arr, ele){
+  arr.forEach((item, i) => {
+    var span = document.createElement('span')
+    span.className = 'invisible';
+    if (item == ' '){
+      span.classList.add('space');
+    }
+    span.innerHTML = `${item}`;
+    ele.appendChild(span);
+  });
+  ele.innerHTML += '<br>'
+}
+
+function tipeText(cursher, ele, arr){
+  var i = 0;
+  var mess = setInterval(()=>{
+    var cLeft = ele[i].offsetLeft;
+    var cTop = ele[i].offsetTop;
+    var cWidth = cursher.offsetWidth;
+    ele[i].classList.remove('invisible');
+    cursher.style.left = `${cLeft + cWidth}px`;
+    cursher.style.top = `${cTop}px`;
+    console.log(i, arr.length)
+    if (i >= arr.length) {clearInterval(mess)};
+    i++;}, 100)
+}
 
 window.addEventListener("resize", ()=>{
   let widthi = window.innerWidth;
@@ -31,7 +101,6 @@ window.addEventListener("resize", ()=>{
         navStar.classList.add('landscape');
         tab.style.maxHeight = `${heighti - 10}px`;
         tab.style.maxWidth = `${widthi * .7665}px`;
-        console.log('hi');
       }
       if (widthi < heighti && navStar.classList.contains('landscape')){
         navStar.classList.remove('landscape');
@@ -771,7 +840,7 @@ function cardDisplay(id, event) {
   let img = document.querySelector(`#${parent.id} img`);
   let card = document.querySelectorAll('.card');
 
-  if (window.innerWidth >= 992 || window.innerHeight >= 992) {
+  if (window.innerWidth >= 992) {
     card.forEach((item, i) => {
       if (item.classList.contains('card-show')) {
         item.classList.remove('card-show');
@@ -798,7 +867,7 @@ function cardDisplay(id, event) {
       targ2.classList.add('rev-show');
     }, 3000)
   }
-  if (window.innerWidth < 992 && window.innerHeight < 992) {
+  if (window.innerWidth < 992) {
     card.forEach((item, i) => {
       if (item.classList.contains('card-show')) {
         item.classList.remove('card-show');

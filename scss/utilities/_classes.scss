@@ -10,6 +10,14 @@
   display: none;
 }
 
+.invisible{
+  visibility: hidden;
+}
+
+.space{
+  width: 6px;
+}
+
 .show{
   display: flex;
 }
@@ -19,8 +27,9 @@
 }
 
 .outwindow{
-  transform: translateY(-600%);
+  transform: translateY(-800%);
   z-index: 4;
+  height: 105%;
 }
 
 .bold{
