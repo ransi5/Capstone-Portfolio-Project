@@ -69,14 +69,15 @@ function createTipeText(arr, ele){
 function tipeText(cursher, ele, arr){
   var i = 0;
   var mess = setInterval(()=>{
+    if (i > arr.length || ele[i] === undefined) {clearInterval(mess)};
     var cLeft = ele[i].offsetLeft;
     var cTop = ele[i].offsetTop;
     var cWidth = cursher.offsetWidth;
     ele[i].classList.remove('invisible');
     cursher.style.left = `${cLeft + cWidth}px`;
     cursher.style.top = `${cTop}px`;
-    console.log(i, arr.length)
-    if (i >= arr.length) {clearInterval(mess)};
+    console.log(ele[i])
+
     i++;}, 100)
 }
 
