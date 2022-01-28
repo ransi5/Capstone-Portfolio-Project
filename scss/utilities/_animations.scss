@@ -89,7 +89,7 @@
 
 @keyframes dropMe {
   0% {
-    transform: translateY(-600%) scale(2);
+    transform: translateY(-600%) scale(0);
   }
   50% {
     transform: translateY(0%) scale(2);

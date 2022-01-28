@@ -12,12 +12,11 @@ const vew = document.querySelector('.me .view');
 const offer = document.querySelector('.offer-box .offer');
 const offerP = document.querySelector('.offer p');
 
-
 fid.addEventListener('click', ()=>{
   if (!offerP.classList.contains('hide')){
     var text1 = 'Hold on!!!'
-    var text2 = 'You have a message from a Galaxy far far FAR away!!!'
-    var text3 = 'If you are an employer, schedule an interview to get a free box of chocolates.';
+    var text2 = 'You have a message from Randeep!!!'
+    var text3 = 'If you are an employer, schedule an interview to learn more about me.';
     var tArr1 = text1.split('');
     var tArr2 = text2.split('');
     var tArr3 = text3.split('');
@@ -421,8 +420,8 @@ function setWidth(){
 function setHeight(navStar, main){
   const inftab = document.getElementById('info-tab');
   let objHeight = inftab.offsetHeight;
-  let tHeight = window.innerHeight - (navStar.offsetHeight + 5 + 25);
-
+  let tHeight = window.innerHeight - (navStar.offsetHeight + 5 + 20);
+  document.body.style.maxHeight = `${window.innerHeight}px`;
   let setHetty = setInterval(()=>{
     objHeight--;
     inftab.style.maxHeight = `${objHeight}px`;
