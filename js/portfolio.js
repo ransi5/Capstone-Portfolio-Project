@@ -16,7 +16,7 @@ fid.addEventListener('click', ()=>{
   if (!offerP.classList.contains('hide')){
     var text1 = 'Hold on!!!'
     var text2 = 'You have a message from Randeep!!!'
-    var text3 = 'If you are an employer, schedule an interview to learn more about me.';
+    var text3 = 'If you are an employer, schedule an interview to learn more about how I can add value to your team.';
     var tArr1 = text1.split('');
     var tArr2 = text2.split('');
     var tArr3 = text3.split('');

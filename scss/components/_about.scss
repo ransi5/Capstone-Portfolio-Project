@@ -269,6 +269,14 @@
   }
 }
 
+.social-links{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  min-height: -webkit-fill-available;
+}
+
 .socials{
   width: 100%;
   max-width: 200px;
@@ -341,7 +349,7 @@
   }
   .linked{
     position: absolute;
-    top: 12.5%;
+    top: 25%;
   }
   img{
     width: 100%;

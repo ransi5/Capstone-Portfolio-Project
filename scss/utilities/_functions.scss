@@ -18,5 +18,5 @@
 
 @function randomImage($img) {
   $image: nth($img, random(length($img)));
-  @return $image;
+  @return unquote($image);
 }

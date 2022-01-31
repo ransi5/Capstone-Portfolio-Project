@@ -28,5 +28,5 @@ $xlbreak: 1200px;
 
 // images -------------------------------------------------//
 
-$imagessm: url('../images/banff_small.jpg'), url('../images/city_small.jpg'), url('../images/paradise_small.jpg');
-$imageslg: url('../images/banff.jpg'), url('../images/city.jpg'), url('../images/paradise.jpg');
+$imagessm: "linear-gradient(rgb(152, 192, 243, .8), rgb(152, 192, 243, .4)), url('../images/banff_small.jpg')", "linear-gradient(rgb(0, 0, 0, .8), rgb(0, 0, 0, .4)), url('../images/city_small.jpg')", "linear-gradient(rgb(3, 109, 221, .8), rgb(3, 109, 221, .4)), url('../images/paradise_small.jpg')";
+$imageslg: "linear-gradient(rgb(152, 192, 243, .8), rgb(152, 192, 243, .4)), url('../images/banff_small.jpg')", "linear-gradient(rgb(0, 0, 0, .8), rgb(0, 0, 0, .4)), url('../images/city_small.jpg')", "linear-gradient(rgb(3, 109, 221, .8), rgb(3, 109, 221, .4)), url('../images/paradise_small.jpg')";

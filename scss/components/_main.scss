@@ -25,7 +25,7 @@ main{
     opacity: 0;
     animation: revelation 1s 1.6s forwards, backmove 120s infinite;
     @media (min-width: $smbreak) {
-      background-image: linear-gradient($colprimrgrad, $colprimrgradpr), randomImage($imageslg);
+      background-image: randomImage($imageslg);
       animation: revelation 1s 1.6s forwards, backmove 100s infinite;
     }
   }
