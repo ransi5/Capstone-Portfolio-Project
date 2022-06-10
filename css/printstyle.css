@@ -1,6 +1,9 @@
 .resume {
   width: 100%;
+  max-width: max-content;
   height: fit-content;
+  margin: auto;
+  font-family: garamond, assistant, sans-serif;
 }
 .resume .res-wrapper, .resume .cont {
   width: 100%;
@@ -10,60 +13,110 @@
 .resume .heady {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  background-color: #a7cdfe;
-  padding-bottom: 10px;
 }
-.resume h2 {
-  margin-bottom: 10px;
+
+.resume h3{
+  color:#0247fe;
 }
+
+.emph{
+  color:#0247fe;
+  font-weight: bold;
+}
+
+ul{
+  list-style-type: circle;
+}
+
+.resume .head-item{
+  display: flex;
+  border-bottom: 2px solid #0247fe;
+  border-right: 2px solid #0247fe;
+  color: #0247fe;
+}
+.head-item h2 {
+  margin: 0px;
+  flex: 1 50%;
+  padding-left: 5px;
+}
+
+.head-item a{
+  text-decoration: none;
+  flex: 1 50%;
+  text-align: right;
+  padding-right: 5px;
+  line-height: 2;
+}
+
 .resume .cont {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
 }
-@media (min-width: 768px), (min-height: 768px) {
+@media (min-width: 500px) {
   .resume .cont {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 .resume a {
   text-decoration: none;
   color: inherit;
 }
-.resume .sm-ic {
-  width: 1.2em;
-  height: 1.2em;
-  margin-right: 15px;
+
+.bio{
+  margin-top: 20px;
 }
-.resume hr {
-  margin: 0px;
+
+.summary{
+  margin-top: 20px;
+
 }
+
 .resume .skil {
-  margin: 10px auto;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .resume .skil h2 {
   flex: 12 100%;
   min-width: 100%;
 }
-.resume .skil .item {
-  padding: 8px;
-  border-right: 1px solid white;
-  background-color: #a7cdfe;
-  font-weight: 500;
+
+.resume .skil ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
 }
+
+.resume .skil li {
+  padding: 2px;
+  flex: 1 30%;
+}
+
+.achievement{
+  margin-top: 10px;
+}
+
+.achievement ul{
+  font-weight: bold;
+}
+
 .resume .projects {
-  margin: 10px auto;
+  margin-top: 10px;
 }
 .resume .projects .links {
   display: flex;
   flex-direction: column;
+}
+
+.project p{
+  margin: 1px 0px 0px;
 }
 @media (min-width: 768px), (min-height: 768px) {
   .resume .projects .links {
@@ -71,78 +124,47 @@
     justify-content: space-between;
   }
 }
-.resume h3 {
-  margin-bottom: 10px;
-  margin-top: 0px;
-}
+
 .resume ul {
   padding-inline-start: 15px;
   margin-top: 5px;
 }
 .resume .experience {
-  margin: 10px auto;
+  margin-top: 10px;
 }
 .resume .work {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 5px;
 }
-.resume .work h3 {
-  flex: 1 100%;
-  max-width: 100%;
-  margin-bottom: 5px;
+.resume .work p {
+  flex: 1 50%;
+  margin: 1px 0px;
 }
-@media (min-width: 768px), (min-height: 768px) {
-  .resume .work h3 {
-    flex: 1 33%;
-    max-width: 33%;
-  }
-}
+
 .resume .work .duration {
-  display: flex;
-  justify-content: flex-end;
-  margin: 5px 0px;
-  flex: 1 50%;
-  max-width: 50%;
-}
-@media (min-width: 768px), (min-height: 768px) {
-  .resume .work .duration {
-    flex: 1 33%;
-    max-width: 33%;
-  }
-}
-.resume .work .role {
-  margin: 5px 0px;
-  max-width: 50%;
-  flex: 1 50%;
-}
-@media (min-width: 768px), (min-height: 768px) {
-  .resume .work .role {
-    flex: 1 33%;
-    max-width: 33%;
-  }
+  text-align: right;
 }
 .resume .education {
-  margin: 10px auto;
+  margin-top: 10px;
 }
-.resume .course {
+.education .course {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 5px;
 }
-@media (min-width: 768px), (min-height: 768px) {
-  .resume .course {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.education p {
+  flex: 1 60%;
+  margin: 1px 0px;
 }
-.resume .course .goli {
-  min-width: 100%;
-}
-.resume p {
-  margin: 5px 0px;
+
+.education .period{
+  flex: 1 40%;
+  text-align: right;
 }
 
 /*# sourceMappingURL=styles.css.map */
